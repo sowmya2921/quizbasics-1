@@ -9,8 +9,8 @@ function AllProducts(){
         .then(products=>setproducts(products))
     },[])
     function deleteProduct(id){
-        fetch(`http://loalhost:4500/deleteProduct/${id}`,{
-            method:'DELETE'
+        fetch(`http://localhost:4500/deleteProduct/${id}`,{
+            method:"DELETE"
         })
         .then(res=>res.json())
         .then(data=>console.log(data))

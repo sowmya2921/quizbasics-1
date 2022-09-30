@@ -13,13 +13,14 @@ function ProductDetails(){
     },[params])
     return (
         <div className="d-flex-wrap">
-            <div className="w-50" p-5>
+            <div className="w-25" p-5>
                 <img className="img-fluid" src={product.image} alt="" />
             </div>
             <div className="w-50">
                 <h1>{product.title}</h1>
                 <p>{product.description}</p>
-                <h2>{product.price}</h2>      
+                <h2>{product.price}</h2> 
+                
             </div>
         </div>
     )

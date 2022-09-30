@@ -43,8 +43,8 @@ app.post("/addProducts",function(req,res){
     })
   })
 
-  app.get('/getProductDetails/id',function(req,res){
-    console/log(req.params)
+  app.get('/getProductDetails/:id',function(req,res){
+    console.log(req.params)
     MongoClient.connect('mongodb://localhost:27017', (err, client) => {
       if (err) throw err
       const db = client.db('kh2')
@@ -55,8 +55,8 @@ app.post("/addProducts",function(req,res){
       .catch(err=>console.log('err',err))
     })
   })
-
-  app.delete('/deleteProduct/:id',function(req,res){
+  
+  app.delete("/deleteProduct/:id",function(req,res){
     console.log(req.params)
     MongoClient.connect('mongodb://localhost:27017', (err, client) => {
       if (err) throw err
@@ -68,6 +68,7 @@ app.post("/addProducts",function(req,res){
       .catch(err=>console.log('err',err))
     })
   })
+ 
 
 
   app.listen(4500,()=>{console.log("server is running on 4500")})
