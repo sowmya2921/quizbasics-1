@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 function AllProducts(){
     const [products,setproducts] = useState([])
     useEffect(()=>{
-        fetch("http://localhost:4500/getAllProducts")
+        fetch("http://localhost:4500/product/getAllProducts")
         .then(res=>res.json())
         .then(products=>setproducts(products))
     },[])
     function deleteProduct(id){
-        fetch(`http://localhost:4500/deleteProduct/${id}`,{
+        fetch(`http://localhost:4500/product/deleteProduct/${id}`,{
             method:"DELETE"
         })
         .then(res=>res.json())

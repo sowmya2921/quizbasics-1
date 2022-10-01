@@ -5,7 +5,7 @@ import Question from "./Question";
 function Quiz(){
     const [questions,setquestions] = useState([])
     useEffect(()=>{
-        fetch("http://localhost:4500/questions")
+        fetch("http://localhost:4500/quiz/questions")
         .then(res=>res.json())
         .then(data=>{
             setquestions(data)

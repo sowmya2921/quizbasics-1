@@ -15,7 +15,7 @@ function AddProduct() {
   })
   function addProduct(){
     console.log("newproduct",newproduct)
-    fetch("http://localhost:4500/addProducts",{
+    fetch("http://localhost:4500/product/addProducts",{
       method:'POST',
       headers: {
         'Content-Type': 'application/json'
