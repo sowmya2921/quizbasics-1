@@ -6,6 +6,11 @@ function Navbar(){
             <nav class="navbar navbar-expand-sm bg-info navbar-dark">
                 <div class="container-fluid">
                     <ul class="navbar-nav">
+                    <li class="nav-item">
+                           <Link to="/" class="nav-link active">
+                            <img src="/kh2logo2.jpg" style={{width:'100px'}} alt="" />
+                           </Link>
+                        </li>
                         <li class="nav-item">
                            <Link to="/quiz" class="nav-link active">Quiz</Link>
                         </li>
