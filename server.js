@@ -2,7 +2,7 @@ var express = require('express')
 const MongoClient = require('mongodb').MongoClient
 var cors = require('cors')
 var bodyParser = require('body-parser')
-var productRouter = require("./products.router")
+var productRouter = require("./product/products.router")
 var quizRouter = require("./quiz.router")
 var app = express()
 

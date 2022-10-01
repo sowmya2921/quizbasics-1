@@ -3,6 +3,7 @@ import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
 function AllProducts(){
     const [products,setproducts] = useState([])
+    const [searchKey,setsearchKey] = useState('')
     useEffect(()=>{
         fetch("http://localhost:4500/product/getAllProducts")
         .then(res=>res.json())
@@ -15,8 +16,23 @@ function AllProducts(){
         .then(res=>res.json())
         .then(data=>console.log(data))
     }
+    useEffect(()=>{
+        if(searchKey){
+            fetch(`http://localhost:4500/product/searchProducts/${searchKey}`)
+        .then(res=>res.json())
+        .then(products=>setproducts(products.filteredProducts))
+        }
+        else{
+            fetch("http://localhost:4500/product/getAllProducts")
+            .then(res=>res.json())
+            .then(products=>setproducts(products))
+        } 
+    },[searchKey])
     return (
-        <div className="d-flex flex-wrap justify-content-between">
+        <div>
+            <input type="text" placeholder="search" onChange={(e)=>{setsearchKey(e.target.value)}}/>
+            {searchKey}
+            <div className="d-flex flex-wrap justify-content-between">
             {
                 products.map((product,i)=>{
                     return <div className="w-25 border p-2">
@@ -29,6 +45,8 @@ function AllProducts(){
                 })
             }
         </div>
+       </div>
+        
     )
 }
 export default AllProducts
