@@ -12,6 +12,7 @@ import AddProduct from './AddProduct';
 import Quiz from './Quiz';
 import AllProducts from './AllProducts';
 import ProductDetails from './ProductDetails';
+import Login from './Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
       <Route path="/" element={<App />}>
         <Route path='/addProduct' element={<AddProduct></AddProduct>}></Route>
         <Route path='/quiz' element={<Quiz></Quiz>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/allProducts' element={<AllProducts></AllProducts>}></Route>
         <Route path='/productDetails/:id' element={<ProductDetails></ProductDetails>}></Route>
       </Route>
